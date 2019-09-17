@@ -31,3 +31,6 @@ sudo nano /lib/systemd/system/sample.service
 sudo chmod 644 /lib/systemd/system/sample.service
 sudo systemctl daemon-reload
 sudo systemctl enable sample.service
+
+[REF]
+https://www.shellhacks.com/systemd-service-file-example/
