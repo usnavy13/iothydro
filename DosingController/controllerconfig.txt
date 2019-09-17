@@ -1,0 +1,17 @@
+[MIX]
+cal=1.5
+ab=3.5
+early=0.5
+mid=3
+guard=2
+phup=1
+phdown=2
+rate=1.4
+
+[Thresh]
+ec=525
+phup=6.4
+phlow=5.6
+time=20
+
+#MUST RESTART FOR CHANGES TO TAKE EFFECT

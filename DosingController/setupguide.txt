@@ -1,0 +1,21 @@
+[mqtt]
+sudo pip3 install paho-mqtt
+
+[run on startup]
+sudo nano /lib/systemd/system/sample.service
+
+ [Unit]
+ Description=My Sample Service
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStartPre=/bin/sleep 30
+ ExecStart=/usr/bin/python /home/pi/sample.py
+
+ [Install]
+ WantedBy=multi-user.target
+
+sudo chmod 644 /lib/systemd/system/sample.service
+sudo systemctl daemon-reload
+sudo systemctl enable sample.service

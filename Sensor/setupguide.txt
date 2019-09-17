@@ -1,0 +1,33 @@
+[Interfaces]
+i2c
+1-wire
+
+[adafruit dht22]
+sudo apt-get install python3-pip
+sudo python3 -m pip install --upgrade pip setuptools wheel
+sudo pip3 install Adafruit_DHT
+
+[mqtt]
+sudo pip3 install paho-mqtt
+
+[influxdb]
+sudo pip3 install influxdb
+
+[run on startup]
+sudo nano /lib/systemd/system/sample.service
+
+ [Unit]
+ Description=My Sample Service
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStartPre=/bin/sleep 30
+ ExecStart=/usr/bin/python /home/pi/sample.py
+
+ [Install]
+ WantedBy=multi-user.target
+
+sudo chmod 644 /lib/systemd/system/sample.service
+sudo systemctl daemon-reload
+sudo systemctl enable sample.service
