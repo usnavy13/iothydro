@@ -7,18 +7,18 @@ import struct #packing module
 import configparser
 
 #GPIO pin numbers
-phup=17
-phdown=27
-a=22
-b=5
-cal=6
-early=13
-mid=19
-guard=26
+phup=18
+phdown=23
+a=24
+b=25
+cal=12
+early=16
+mid=20
+guard=21
 
 #Config setup
 config = configparser.RawConfigParser()
-config.read('controllerconfig.txt')
+config.read('controllerconfig2.txt')
 
 #Program settings
 calmix = float(config.get('MIX', 'cal'))
@@ -45,7 +45,7 @@ GPIO.setup(chan_list, GPIO.OUT)
 GPIO.output(chan_list,GPIO.LOW)
 
 #MQTT client setup
-client = mqtt.Client("controller1fhwgw") #create new instance
+client = mqtt.Client("contr2221fhwgw") #create new instance
 broker_address="test.mosquitto.org" #broker address
 topic = "home/grow/flower1"
    
